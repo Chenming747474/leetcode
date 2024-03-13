@@ -8,7 +8,7 @@ console.log(`The subsets are: `)
 //[1, 2, 3] nums
 //[0, 1, 0] selected by bit
 //subset is [2]
-//totallity of subsets is: 2 ** nums.length
+//Cardinality of subsets is: 2 ** nums.length
 var subsets = function(nums) {
 	let res = []
 
@@ -23,8 +23,8 @@ var subsets = function(nums) {
 
 		for (let i = arr.length - 1; i > -1; i--		) {
 			if (arr[i] === '1') {
-			subSet.push(nums[i + nums.length		 - arr.length])
-			//console.log('=======', nums[i 		//+ nums.length - arr.length])
+			subSet.push(nums[i + nums.length - arr.length])
+			//console.log('=======', nums[i + nums.length - arr.length])
 			}
 
 		}
