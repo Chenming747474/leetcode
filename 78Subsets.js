@@ -40,3 +40,39 @@ const subsets = nums => {
 };
 
 console.log(subsets(nums))
+
+//==============
+
+const subsets1 = nums => {
+
+        let res = []
+
+        for (let i = 0; i < 2 ** nums.length; i++) {
+                let b = i.toString(2)
+                //console.log(b)
+		
+		let arr = new Array(nums.length - b.length).fill('0')
+                //console.log(arr)  
+
+		arr.push(...b)
+                //bitmask
+                //console.log(arr)
+
+                let subSet = []
+
+                arr.forEach( (v, i) => {
+
+                        if (v === '1') {
+                                subSet.push(nums[i])        
+                                }
+                        }
+                )
+
+                //console.log(subSet)
+                res.push(subSet)
+
+        }
+        return res
+};
+
+console.log(subsets1(nums))
