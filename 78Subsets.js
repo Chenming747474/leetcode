@@ -4,9 +4,9 @@ console.log(`The set is [${nums}]`)
 console.log(`The subsets are: `)
 
 
-//bit-wised solution
+//bit-wised bitmask solution
 //[1, 2, 3] nums
-//[0, 1, 0] selected by bit
+//[0, 1, 0] bitmask
 //subset is [2]
 //Cardinality of subsets is: 2 ** nums.length
 const subsets = nums => {
@@ -18,6 +18,7 @@ const subsets = nums => {
 		//console.log(b)
 		
 		let arr = [...b]
+		//bitmask
 		//console.log(arr)
 
 		let subSet = []
