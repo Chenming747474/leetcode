@@ -9,7 +9,8 @@ console.log(`The subsets are: `)
 //[0, 1, 0] selected by bit
 //subset is [2]
 //Cardinality of subsets is: 2 ** nums.length
-var subsets = function(nums) {
+const getSubsets = nums => {
+
 	let res = []
 
 	for (let i = 0; i < 2 ** nums.length; i++) {
@@ -36,4 +37,4 @@ var subsets = function(nums) {
 	return res
 };
 
-console.log(subsets(nums))
+console.log(getSubsets(nums))
