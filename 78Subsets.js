@@ -23,13 +23,14 @@ const subsets = nums => {
 
 		let subSet = []
 
-		for (let i = arr.length - 1; i > -1; i--		) {
-			if (arr[i] === '1') {
-			subSet.push(nums[i + nums.length - arr.length])
-			//console.log('=======', nums[i + nums.length - arr.length])
+		arr.forEach( (v, i) => {
+			
+			if (v === '1') {
+				subSet.push(nums[i + nums.length - arr.length])
+				//console.log('=======', nums[i + nums.length - arr.length])	
+				}
 			}
-
-		}
+		)
 
 		//console.log(subSet)
 		res.push(subSet)
