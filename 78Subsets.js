@@ -107,4 +107,38 @@ const subsets2 = nums => {
 
 console.log(subsets2(nums))
 
+//--------
+//
+//array.shift()
+//
+//
+const subsets3 = nums => {
+
+        const res = [[], ]
+        const InitSubSet = []
+
+        const recur = (subSet, remain) => {
+                
+
+		while (true) {
+
+			let leftMost = remain.shift()
+			if (leftMost === undefined) break
+
+                        let nextSubSet = [...subSet, leftMost]
+                        res.push(nextSubSet)
+
+                        recur(nextSubSet, [...remain])
+		}
+        
+
+        }
+
+        recur(InitSubSet, nums)
+
+        return res
+}
+
+console.log(subsets3(nums))
+
 
