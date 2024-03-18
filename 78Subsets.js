@@ -76,3 +76,35 @@ const subsets1 = nums => {
 };
 
 console.log(subsets1(nums))
+
+//================
+//recursive ver. backtracking
+//
+//
+
+
+const subsets2 = nums => {
+
+	const res = [[], ]
+	const InitSubSet = []
+
+	const recur = (subSet, index) => {
+		for (let i = index; i < nums.length; i++) {
+			
+			let nextSubSet = [...subSet, nums[i]]
+			res.push(nextSubSet)
+
+			recur(nextSubSet, i + 1)
+			
+		}
+		
+	}
+
+	recur(InitSubSet, 0)
+
+	return res
+}
+
+console.log(subsets2(nums))
+
+
