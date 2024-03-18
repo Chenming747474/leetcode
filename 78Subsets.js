@@ -89,12 +89,12 @@ const subsets2 = nums => {
 	const InitSubSet = []
 
 	const recur = (subSet, index) => {
-		for (let i = index; i < nums.length; i++) {
+		for (let i = index; i < nums.length; ) {
 			
 			let nextSubSet = [...subSet, nums[i]]
 			res.push(nextSubSet)
-
-			recur(nextSubSet, i + 1)
+			i ++
+			recur(nextSubSet, i)
 			
 		}
 		
