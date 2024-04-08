@@ -141,4 +141,42 @@ const subsets3 = nums => {
 
 console.log(subsets3(nums))
 
+//==========================
 
+
+const subsets4 = (nums) => {
+
+	let bitmask = []
+	let depth = 0
+	let subSets = []
+	const bt = () => {
+		if (depth < nums.length) {
+			bitmask.push(0)
+			depth++
+			bt()
+			bitmask.pop()
+
+			bitmask.push(1)
+			depth++
+			bt()
+			bitmask.pop()
+
+			depth--
+		} else {
+			// console.log(bitmask)
+			let subSet = []
+			bitmask.forEach((val, idx) => {
+				if (val) subSet.push(nums[idx])
+			})
+			subSets.push(subSet)
+			depth--
+		}
+	}
+
+	bt()
+
+	return subSets
+}
+
+
+console.log(subsets4(nums));
